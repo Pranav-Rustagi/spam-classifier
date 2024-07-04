@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='/images/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/stylesheets/style.css') }}">
+    <title>Spam Detector</title>
+</head>
+
+<body>
+    <h1>Spam Detector</h1>
+    <div class="container">
+        <div class="result">
+            <p class="info">Enter the sms/email text below and click "check" button</p>
+            <p class="hide spam-prediction spam-true">😭 It is a spam</p>
+            <p class="hide spam-prediction spam-false">😀 It is not a spam</p>
+        </div>
+        <form action="/" method="POST" class="form">
+            <textarea rows="10" name="content"></textarea>
+            <div class="action-row">
+                <button type="submit" id="check">Check</button>
+                <button type="reset">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='/scripts/script.js') }}"></script>
+</body>
+</html>
